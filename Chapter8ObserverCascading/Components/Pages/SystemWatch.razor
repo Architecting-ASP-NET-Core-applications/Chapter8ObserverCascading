@@ -1,0 +1,13 @@
+﻿@using Chapter8ObserverCascading.Models
+<div class="@theme?.MainTheme">
+    <h3>SystemWatch</h3>
+    <p>@theme?.MainTheme</p>
+    <h1>@DateTime.Now.Second</h1>
+
+    <div>
+        This is component
+    </div>
+</div>
+@code {
+    [CascadingParameter] private ThemeInfo? theme { get; set; }
+}

@@ -1,0 +1,19 @@
+﻿@page "/"
+@using Chapter8ObserverCascading.Models
+@rendermode RenderMode.InteractiveServer
+<CascadingValue Value="theme">
+    
+    <SystemWatch />
+
+    <div class="@theme?.MainTheme">
+        <h1>This is my page</h1>
+        @if (theme is not null)
+        {
+            <button @onclick="theme.ChangeToDarkTheme">Dark mode</button>
+            <button @onclick="theme.ChangeToLiteTheme">Lite mode</button>
+        }
+    </div>
+</CascadingValue>
+@code {
+    [CascadingParameter] private ThemeInfo? theme { get; set; }
+}
