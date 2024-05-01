@@ -1,12 +1,8 @@
 ﻿@using Chapter8ObserverCascading.Models
 <div class="@theme?.MainTheme">
-    <h3>SystemWatch</h3>
+    <h3>Date-Time</h3>
     <p>@theme?.MainTheme</p>
-    <h1>@DateTime.Now.Second</h1>
-
-    <div>
-        This is component
-    </div>
+    <h1>@DateTime.Now.ToShortDateString()</h1>
 </div>
 @code {
     [CascadingParameter] private ThemeInfo? theme { get; set; }
